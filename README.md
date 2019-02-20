@@ -21,3 +21,9 @@ It is a project to crawl Beijing 5 star hotel via https://www.ctrip.com
 
 - Hotel(index=170)
 ![Image](https://github.com/icmpnorequest/Ctrip-Price-Crawl/blob/master/Image/3.%20Hotel%20170%20Result.png)
+
+# 4. Detailed Blog
+I have completed the detailed project discription in my blog() in Chinese.
+If you like my project, please star it for my hard work.
+If you have any questions, please feel free to contact/issue me.
+Thanks in advance!
