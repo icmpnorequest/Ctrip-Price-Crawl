@@ -40,8 +40,8 @@ def Scrap_hotel_lists():
     # 8 pages
     for page in range(1,8):
         data = {
-            "StartTime": "2019-02-19",  # The value depends on the date you want to scrap.
-            "DepTime": "2019-02-20",
+            "StartTime": "2019-03-18",  # The value depends on the date you want to scrap.
+            "DepTime": "2019-03-20",
             "RoomGuestCount": "0,1,2",
             "cityId": 1,
             "cityPY": " beijing",
@@ -102,7 +102,7 @@ def hotel_detail(hotel_id):
     LowPrice = []
     RoomSize = []
     RoomLevel = []
-    IsSmoking = []
+    IsAddBed = []
     BedSize = []
     CustomerNum = []
 
@@ -122,19 +122,22 @@ def hotel_detail(hotel_id):
             # <class 'str'>
             remove_tag = baseroom_pattern.sub("", baseroom_info)
             RoomDetailInfo = remove_tag.split("|")
+            if len(RoomDetailInfo) == 4:
+                RoomDetailInfo.insert(3, None)
+
             RoomSize.append(RoomDetailInfo[0])
             RoomLevel.append(RoomDetailInfo[1])
-            IsSmoking.append(RoomDetailInfo[2])
-            BedSize.append(RoomDetailInfo[3])
+            BedSize.append(RoomDetailInfo[2])
+            IsAddBed.append(RoomDetailInfo[3])
             CustomerNum.append(RoomDetailInfo[4])
         else:
             continue
 
-    RoomInfo = np.array((RoomID, RoomName, LowPrice, RoomSize, RoomLevel, IsSmoking, BedSize, CustomerNum)).T
+    RoomInfo = np.array((RoomID, RoomName, LowPrice, RoomSize, RoomLevel, BedSize, IsAddBed, CustomerNum)).T
+    # Create a DataFrame object
     # print(RoomInfo)
-    df = pd.DataFrame(data=RoomInfo,
-                      columns=['RoomID', 'RoomName', 'LowPrice', 'RoomSiae', 'RoomLevel', 'IsSmoking', 'BedSize',
-                               'CustomerNum'])
+    column_name = ['RoomID', 'RoomName', 'LowPrice', 'RoomSize', 'RoomLevel', 'BedSize', 'IsAddBed', 'CustomerNum']
+    df = pd.DataFrame(data=RoomInfo, columns=column_name)
     print(df)
 
 
