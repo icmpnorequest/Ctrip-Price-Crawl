@@ -32,7 +32,7 @@ It is a project to crawl Beijing 5 star hotel via https://www.ctrip.com
 ![Image](https://github.com/icmpnorequest/Ctrip-Price-Crawl/blob/master/Image/4.%20Scrap%20by%20date.png)
 
 4. Scrap Comments
-![https://github.com/icmpnorequest/Ctrip-Price-Crawl/blob/master/Image/5.%20Scrap%20Kerry%20Comments.png]
+![Image](https://github.com/icmpnorequest/Ctrip-Price-Crawl/blob/master/Image/5.%20Scrap%20Kerry%20Comments.png)
 
 ## 4. Detailed Blog
 I have completed the detailed project discription in my blog (https://blog.csdn.net/pandalaiscu/article/details/87720709) in Chinese.
